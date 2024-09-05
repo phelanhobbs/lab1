@@ -6,7 +6,13 @@ CC=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-gcc
 AS=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-as
 
 main.i: main.c
-	$(CPP) main.c > main.i	
+	$(CPP) main.c > main.i
+
+main.s: main.i
+	$(CC) -S main.i
+
+main.o: main.s
+	$(AS) main.s -o main.o	
 
 clean: 
 	rm -f main.i hello.txt
