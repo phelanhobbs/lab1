@@ -15,6 +15,6 @@ main.o: main.s
 	$(AS) main.s -o main.o	
 
 clean: 
-	rm -f main.i hello.txt
+	rm -f main.i main.o main.s hello.txt
 
 .PHONY: clean
