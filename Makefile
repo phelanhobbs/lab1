@@ -1,3 +1,5 @@
+.PHONY: clean all
+
 hello.txt:
 	echo "hello world!" > hello.txt
 
@@ -34,4 +36,4 @@ main.o: main.s
 clean: 
 	rm -f *.i *.o *.s hello.txt firmware.elf
 
-.PHONY: clean all
+
