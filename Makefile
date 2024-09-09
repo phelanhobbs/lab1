@@ -32,6 +32,6 @@ main.o: main.s
 	$(AS) $< -o $@
 
 clean: 
-	rm -f *.i *.s *.o hello.txt
+	rm -f *.i *.s *.o *.elf hello.txt
 
 .PHONY: clean all
