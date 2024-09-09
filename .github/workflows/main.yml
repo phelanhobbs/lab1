@@ -32,6 +32,8 @@ jobs:
             test ! -f main.s
             make hello.txt
             test -f hello.txt
+            cat hello.txt
+            make clean
 
       - name: Test Compile
         shell: bash
