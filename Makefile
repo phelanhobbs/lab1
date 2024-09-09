@@ -23,7 +23,7 @@ main.o: main.s
 	$(AS) main.s -o main.o	
 
 %.i: %.c
-	$(CPP) $< > $@
+	$(CPP) $< 	> $@
 
 %.s: %.i
 	$(CC) $< -S $@
