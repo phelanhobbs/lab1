@@ -1,4 +1,4 @@
-.PHONY: clean all
+.PHONY: all clean
 
 hello.txt:
 	echo "hello world!" > hello.txt
