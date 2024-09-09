@@ -1,3 +1,5 @@
+all: firmware.elf
+
 .PHONY: all clean
 
 hello.txt:
@@ -10,7 +12,7 @@ LD=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-ld
 SRC=main.c second.c
 OBJS=$(patsubst %.c,%.o,$(SRC))
 
-all: firmware.elf
+
 
 firmware.elf: $(OBJS)
 	$(LD) -o $@ $^
