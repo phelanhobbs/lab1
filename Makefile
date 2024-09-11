@@ -1,3 +1,7 @@
+all: firmware.elf
+
+.PHONY: all clean
+
 hello.txt:
 	echo "hello world!" > hello.txt
 
@@ -8,7 +12,7 @@ LD=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-ld
 SRC=main.c second.c
 OBJS=$(patsubst %.c,%.o,$(SRC))
 
-all: firmware.elf
+
 
 firmware.elf: $(OBJS)
 	$(LD) -o $@ $^
@@ -23,7 +27,7 @@ main.o: main.s
 	$(AS) main.s -o main.o	
 
 %.i: %.c
-	$(CPP) $< > $@
+	$(CPP) $< 	> $@
 
 %.s: %.i
 	$(CC) $< -S $@
@@ -32,6 +36,6 @@ main.o: main.s
 	$(AS) $< -o $@
 
 clean: 
-	rm -f *.i *.s *.o *.elf hello.txt
+	rm -f *.i *.o *.s hello.txt firmware.elf
 
-.PHONY: clean all
+

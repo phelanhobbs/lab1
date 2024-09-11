@@ -1,6 +1,9 @@
 hello.txt
 
-*.i
-*.s
-*.o
-*.elf
+main.i
+main.o
+main.s
+
+second.i
+second.o
+second.s
